@@ -1,11 +1,17 @@
 <div class="container mt-5">
-  <h2>Your restaurants</h2>
-  <ul>
-    <% @restaurants.each do |restaurant| %>
-      <h4><%= "#{restaurant.id} #{restaurant.name}" %></h4>
-      <p><%="It's category: #{restaurant.category.capitalize}, and you can find it here: #{restaurant.address}"%></p>
-      <p><%= "Contact them: #{restaurant.phone_number}" %></p>
-      <hr>
-    <% end %>
-  </ul>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h2>Your restaurants</h2>
+      <ul>
+        <% @restaurants.each do |restaurant| %>
+          <h4><%= "#{restaurant.id} #{restaurant.name}" %></h4>
+          <p><%="It's category: #{restaurant.category.capitalize}, and you can find it here: #{restaurant.address}"%></p>
+          <p><%= "Contact them: #{restaurant.phone_number}" %></p>
+          <%= link_to "Details", restaurant_path(restaurant) %>
+          <hr>
+        <% end %>
+      </ul>
+      <%= link_to "Add a new Restaurant", new_restaurant_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
 </div>
