@@ -1,0 +1,11 @@
+<div class="container mt-5">
+  <h2>Your restaurants</h2>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <h4><%= "#{restaurant.id} #{restaurant.name}" %></h4>
+      <p><%="It's category: #{restaurant.category.capitalize}, and you can find it here: #{restaurant.address}"%></p>
+      <p><%= "Contact them: #{restaurant.phone_number}" %></p>
+      <hr>
+    <% end %>
+  </ul>
+</div>
